@@ -1,0 +1,253 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f8fc;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+/* Main Game Container */
+.game1 {
+  max-width: 800px;
+  margin:auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+#loginButton, #signupLink,  .theme-button, .submit-button, .reset-button, .home-button, .demo-button, .feedback-button{
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background-image: linear-gradient(180deg,#7c8aff,#812acd);
+  box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+  transition: all .2s ease-out;
+}
+
+.submit-button, #signupLink{
+  background-image: linear-gradient(180deg,#0b541a,#89c0a7);
+}
+.reset-button{
+  background-image: linear-gradient(180deg,#75778c,#cd732a);
+}
+.home-button{
+  background-image: linear-gradient(180deg,#3a3c4b,#cd2a50);
+}
+.demo-button{
+  background-image: linear-gradient(180deg,#5a3366,#d56781);
+}
+.feedback-button{
+  background-image: linear-gradient(180deg,#75778c,#070707);
+}
+
+.game-header {
+  color: #4a4a4a;
+  text-align: center;
+  font-size: 24px;
+  border-bottom: 2px solid #e1e1e1;
+  padding-bottom: 15px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Questions Container */
+.questions {
+  background-color: #f9f9f9;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.hint-button{
+  display: flex;
+}
+
+.game-completed {
+  text-align: center;
+  color: #3cb371;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+/* Images for Drag and Drop */
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 20px;
+  justify-content: center;
+}
+.diffcultyAndTime{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.diffcultyAndTime__box{
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #c6c5c5;
+  box-shadow: 20px 21px 13px -18px rgba(0,0,0,1);
+}
+.image-container1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  cursor: grab;
+}
+
+.image-container1:active {
+  transform: scale(1.1);
+  cursor: grabbing;
+}
+
+.image-container1 img {
+  height: 100%;
+  width: 100%;
+}
+
+/* Target Area for Drop */
+.target {
+  padding: 20px;
+  background-color: #E5E5E5;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.target.valid {
+  background-color: #98fb98;
+  color: #fff;
+}
+
+.target:hover {
+  background-color: #D5D5D5;
+}
+
+/* Game Control Buttons */
+.game-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+/* button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  background-color: #4a4a4a;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+} */
+
+/* button:hover {
+  background-color: #333333;
+  transform: translateY(-3px);
+} */
+
+button:active {
+  transform: translateY(1px);
+}
+.hint-btn{
+  padding: 5px 15px;
+  border: none;
+  border-radius: 25px;
+  background-color: #675f5f;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.reset-button, .home-button, .feedback-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* DarkTheme.css */
+.dark-theme {
+  background-color: #625656da;
+  color: #ffffff;
+}
+
+.dark-theme .hint-display{
+  color: black;
+}
+
+.dark-theme .game-header{
+  color: white !important;
+}
+
+.dark-theme .target{
+  background-color: rgb(49, 46, 46);
+  color: white !important;
+}
+
+/* LightTheme.css */
+.light-theme {
+  background-color: rgba(225, 223, 206, 0.865);
+  color: #000000;
+}
+
+/* Add this CSS to your Game1.css or create a new CSS file */
+.feedback-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  max-width: 400px; /* Adjust the width as needed */
+  max-height: 80vh; /* Adjust the height as needed */
+  overflow-y: auto;
+}
+.Correct{
+  color: white;
+  background-color: rgba(11, 84, 26, 0.801);
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.Wrong{
+  color: white;
+  background-color: #ee0000bb;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.close-button:hover {
+  color: red; /* Change the color on hover if desired */
+}
